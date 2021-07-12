@@ -73,7 +73,7 @@ namespace StudentReportCard
             Console.WriteLine("\n********************Report Card********************");
             for (int row = 0; row < array.GetLength(0); row++)
             {
-                Console.WriteLine($"\nStudent Name: {array[row, 0]}, Position : {row}, Total: {array[row, 1]}");
+                Console.WriteLine($"\nStudent Name: {array[row, 0]}, Position : {row+1}, Total: {array[row, 1]}");
             }
         }
 
