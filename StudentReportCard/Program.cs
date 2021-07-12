@@ -22,9 +22,8 @@ namespace StudentReportCard
                     Console.Write($"{infoWriteRepordCard[col]}");
                     string input = Console.ReadLine();
                     reportCardArray[row, col] = input;
-
                 }
-
+                
                 if (row != (reportCardArray.GetLength(0) - 1))
                 { Console.WriteLine("\n*************************************************************"); }
             }
@@ -41,7 +40,6 @@ namespace StudentReportCard
                 for (int col = 1; col < array.GetLength(1); col++)
                 {
                     sum += (int.Parse(array[row, (col)]));
-
                 }
                 arrayFinal[row, 0] = array[row, 0];
                 arrayFinal[row, 1] = sum.ToString();
@@ -67,17 +65,13 @@ namespace StudentReportCard
                         array[j, 1] = array[j + 1, 1];
                         array[j + 1, 1] = tempInt;
                     }
-
-                }
-               
-            }
-            
+                }           
+            }     
             return array;
         }
         static void ReportOutputFinal(string[,] array)
         {
             Console.WriteLine("\n********************Report Card********************");
-
             for (int row = 0; row < array.GetLength(0); row++)
             {
                 Console.WriteLine($"\nStudent Name: {array[row, 0]}, Position : {row}, Total: {array[row, 1]}");
@@ -97,8 +91,6 @@ namespace StudentReportCard
             string[,] arrayOutput = ReportCardOutputPosition(arrayAperFinal);
 
             ReportOutputFinal(arrayOutput);
-
-
         }
     }
 }
