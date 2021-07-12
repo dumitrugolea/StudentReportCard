@@ -22,8 +22,7 @@ namespace StudentReportCard
                     Console.Write($"{infoWriteRepordCard[col]}");
                     string input = Console.ReadLine();
                     reportCardArray[row, col] = input;
-                }
-                
+                }   
                 if (row != (reportCardArray.GetLength(0) - 1))
                 { Console.WriteLine("\n*************************************************************"); }
             }
