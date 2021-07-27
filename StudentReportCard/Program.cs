@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace StudentReportCard
 {
     class Program
@@ -11,7 +10,6 @@ namespace StudentReportCard
             "\nEnter Math Marks (out of 100) : ",
             "\nEnter Computer Marks (out of 100) : "
         };
-
         static string[,] EnterInfoStudents(int numStudents)
         {
             string[,] reportCardArray = new string[numStudents, infoWriteRepordCard.Length];
@@ -28,7 +26,6 @@ namespace StudentReportCard
             }
             return reportCardArray;
         }
-
         static string[,] ReportCardSumOutput(string[,] array, int numberOfStudents)
         {
             string[,] arrayFinal = new string[numberOfStudents, 2];
@@ -45,7 +42,6 @@ namespace StudentReportCard
             }
             return arrayFinal;
         }
-
         static string[,] ReportCardOutputPosition(string[,] array)
         {
             string tempInt = "";
@@ -76,19 +72,13 @@ namespace StudentReportCard
                 Console.WriteLine($"\nStudent Name: {array[row, 0]}, Position : {row+1}, Total: {array[row, 1]}");
             }
         }
-
         static void Main(string[] args)
         {
             Console.Write("Enter Total Students: ");
-
             int input = int.Parse(Console.ReadLine());
-
             var infoStudent = EnterInfoStudents(input);
-
             string[,] arrayAperFinal = ReportCardSumOutput(infoStudent, input);
-
             string[,] arrayOutput = ReportCardOutputPosition(arrayAperFinal);
-
             ReportOutputFinal(arrayOutput);
         }
     }
