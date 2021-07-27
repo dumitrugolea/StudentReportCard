@@ -32,13 +32,13 @@ namespace StudentReportCard
         static string[,] ReportCardSumOutput(string[,] array, int numberOfStudents)
         {
             string[,] arrayFinal = new string[numberOfStudents, 2];
-            int sum = 0;
+            float sum = 0;
             for (int row = 0; row < array.GetLength(0); row++)
             {
                 sum = 0;
                 for (int col = 1; col < array.GetLength(1); col++)
                 {
-                    sum += (int.Parse(array[row, (col)]));
+                    sum += (float.Parse(array[row, (col)]));
                 }
                 arrayFinal[row, 0] = array[row, 0];
                 arrayFinal[row, 1] = sum.ToString();
@@ -54,7 +54,7 @@ namespace StudentReportCard
             {
                 for (int j = 0; j < array.GetLength(0) - 1 - row; j++)
                 {
-                    if (int.Parse(array[j, 1]) < int.Parse(array[j + 1, 1]))
+                    if (float.Parse(array[j, 1]) < float.Parse(array[j + 1, 1]))
                     {
                         tempString = array[j, 0];
                         array[j, 0] = array[j + 1, 0];
