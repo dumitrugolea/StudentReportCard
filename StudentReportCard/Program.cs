@@ -1,4 +1,5 @@
 ﻿using System;
+ using System.Linq;
 namespace StudentReportCard
 {
     class Program
@@ -13,14 +14,32 @@ namespace StudentReportCard
         static string[,] EnterInfoStudents(int numStudents)
         {
             string[,] reportCardArray = new string[numStudents, infoWriteRepordCard.Length];
+            string input;
             for (int row = 0; row < reportCardArray.GetLength(0); row++)
             {
                 for (int col = 0; col < reportCardArray.GetLength(1); col++)
                 {
                     Console.Write($"{infoWriteRepordCard[col]}");
-                    string input = Console.ReadLine();
+                    if(col==0)
+                    {
+                        input = Console.ReadLine();
+                        while(!(input.All(c => Char.IsLetter(c))))
+                        {
+                            Console.WriteLine("It is not a corect Name format...Please try again!");
+                            input = Console.ReadLine();
+                        }            
+                    }
+                    else 
+                    {
+                        input = Console.ReadLine();
+                        while(!((float.TryParse(input, out float n)) && (n>0)))
+                        {
+                            Console.WriteLine("Wrong format...Try again please!");
+                            input = Console.ReadLine();
+                        }               
+                    }
                     reportCardArray[row, col] = input;
-                }   
+                }
                 if (row != (reportCardArray.GetLength(0) - 1))
                 { Console.WriteLine("\n*************************************************************"); }
             }
